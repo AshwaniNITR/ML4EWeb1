@@ -558,4 +558,11 @@
     font-size: 9px;
     border-radius: 50px;
   }
+/* Disable rainbow-only on hover when disableAura is true */
+.no-hover-rainbow .pc-card:hover .pc-shine,
+.no-hover-rainbow .pc-card.active .pc-shine {
+  filter: none !important;
+  animation: none !important;
+  background-blend-mode: normal !important;
+}
 }

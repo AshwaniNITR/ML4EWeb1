@@ -20,6 +20,8 @@ const members = [
     avatarUrl: "/team/president.png",
     linkedin: "https://linkedin.com/in/kunal",
     gmail: "mailto:kunal@nitrkl.ac.in",
+    zoom: 1,              // 🔹 Normal size
+    disableAura: true,   // 🔹 Keep glow animation
   },
   {
     name: "Rishi Das",
@@ -28,6 +30,8 @@ const members = [
     avatarUrl: "/team/vp.png",
     linkedin: "https://linkedin.com/in/rishi",
     gmail: "mailto:rishi@nitrkl.ac.in",
+    zoom: 1,
+    disableAura: true,
   },
   {
     name: "Bibhu",
@@ -36,6 +40,8 @@ const members = [
     avatarUrl: "/team/secretary.png",
     linkedin: "https://linkedin.com/in/bibhu",
     gmail: "mailto:bibhu@nitrkl.ac.in",
+    zoom: 1,
+    disableAura: true,
   },
   {
     name: "Arko Pravo Dey",
@@ -44,6 +50,8 @@ const members = [
     avatarUrl: "/team/treasurer.png",
     linkedin: "https://linkedin.com/in/arko",
     gmail: "mailto:arko@nitrkl.ac.in",
+    zoom: 1.5,           // 🔹 Slightly larger photo
+    disableAura: true,    // 🔹 Turn off rainbow animation
   },
   {
     name: "Risabh Anand",
@@ -52,6 +60,8 @@ const members = [
     avatarUrl: "/team/mllead.png",
     linkedin: "https://linkedin.com/in/risabh",
     gmail: "mailto:risabh@nitrkl.ac.in",
+    zoom: 1.5,
+    disableAura: true,
   },
 ];
 
@@ -69,13 +79,8 @@ export default function TeamPage() {
       <div className="relative text-center pt-12 pb-8">
         <h1
           className="text-4xl md:text-5xl font-extrabold tracking-wide text-cyan-200 drop-shadow-[0_0_18px_rgba(0,255,255,.45)]">
-        
           <TextType
-            text={[
-              "Executive Body",
-              "Team ML4E",
-              "Meet Our Leaders",
-            ]}
+            text={["Executive Body", "Team ML4E"]}
             className="text-cyan-200 drop-shadow-[0_0_18px_rgba(0,255,255,.45)]"
             typingSpeed={75}
             pauseDuration={1500}
@@ -105,10 +110,11 @@ export default function TeamPage() {
               status=""
               contactText=""
               avatarUrl={m.avatarUrl}
-              enableTilt
+              enableTilt={false}
               showUserInfo={false}
-              enableMobileTilt
-              showBehindGradient={true}
+              showBehindGradient={false}
+              zoom={m.zoom}               // ✅ Apply per-member zoom
+              disableAura={m.disableAura} // ✅ Apply per-member aura toggle
             />
 
             {/* Social Links */}
