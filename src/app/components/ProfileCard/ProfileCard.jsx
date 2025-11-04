@@ -48,8 +48,12 @@ const ProfileCardComponent = ({
   contactText = "Contact",
   showUserInfo = true,
   onContactClick,
+  
   zoom = 1,
   disableAura = false, // keep tilt, but swap hover rainbow → static cyan glow
+
+  // ✅ ADDED: vertical offset (in px). Positive moves the image DOWN.
+  avatarOffsetY = 0,
 }) => {
   const wrapRef = useRef(null);
   const cardRef = useRef(null);
@@ -233,6 +237,9 @@ const ProfileCardComponent = ({
 
   const avatarTransform = `translateX(-50%) scale(${zoom || 1})`;
 
+  // ✅ ADDED: compose final transform with vertical offset (px)
+  const avatarTransformWithOffset = `${avatarTransform} translateY(${avatarOffsetY}px)`;
+
   return (
     <div
       ref={wrapRef}
@@ -252,7 +259,8 @@ const ProfileCardComponent = ({
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
-              style={{ transform: avatarTransform }}
+              /* ✅ CHANGED to use the new transform with offset */
+              style={{ transform: avatarTransformWithOffset }}
             />
 
             {showUserInfo && (

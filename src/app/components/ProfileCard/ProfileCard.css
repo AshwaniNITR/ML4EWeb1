@@ -54,11 +54,7 @@
   --card-opacity: 1;
 }
 
-.pc-card-wrapper:hover::before,
-.pc-card-wrapper.active::before {
-  filter: contrast(1) saturate(2) blur(40px) opacity(1);
-  transform: scale(0.9) translate3d(0, 0, 0.1px);
-}
+
 
 .pc-card {
   height: 80svh;
@@ -93,11 +89,7 @@
   overflow: hidden;
 }
 
-.pc-card:hover,
-.pc-card.active {
-  transition: none;
-  transform: translate3d(0, 0, 0.1px) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
-}
+
 
 .pc-card * {
   display: grid;
@@ -184,11 +176,6 @@
   opacity: 0;
 }
 
-.pc-card:hover .pc-shine,
-.pc-card.active .pc-shine {
-  filter: brightness(0.85) contrast(1.5) saturate(0.5);
-  animation: none;
-}
 
 .pc-card:hover .pc-shine::before,
 .pc-card.active .pc-shine::before,

@@ -36,6 +36,7 @@ const members = [
     gmail: "mailto:rishikakalidas@gmail.com",
     zoom: 1,
     disableAura: true,
+    
   },
   {
     name: "Bibhu",
@@ -67,16 +68,17 @@ const members = [
     zoom: 1.5,
     disableAura: true,
   },
-  //  {
-  //   name: "Ashwani Senapati",
-  //   title: "Web Lead",
-  //   handle: "ashwani",
-  //   avatarUrl: "/team/weblead.png",
-  //   linkedin: "https://www.linkedin.com/in/ashwani-senapati-ba294827a/",
-  //   gmail: "mailto:senapatiashwani47@gmail.com",
-  //   zoom: 1.5,
-  //   disableAura: true,
-  // },
+  {
+    name: "Ashwani Senapati",
+    title: "Web Lead",
+    handle: "ashwani",
+    avatarUrl: "/team/weblead.png",
+    linkedin: "https://www.linkedin.com/in/ashwani-senapati-ba294827a/",
+    gmail: "mailto:senapatiashwani47@gmail.com",
+    zoom: 1.5,
+    disableAura: true,
+    avatarOffset: 100
+  },
 ];
 
 export default function TeamPage() {
@@ -133,7 +135,8 @@ export default function TeamPage() {
               showUserInfo={false}
               showBehindGradient={false}
               zoom={m.zoom}               // ✅ Apply per-member zoom
-              d//isableAura={m.disableAura} // ✅ Apply per-member aura toggle
+              //disableAura={m.disableAura} // ✅ Apply per-member aura toggle
+              avatarOffsetY={m.avatarOffset}
             />
 
             {/* Social Links */}
